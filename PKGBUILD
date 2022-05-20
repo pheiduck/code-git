@@ -14,7 +14,6 @@ pkgdesc='The Open Source build of Visual Studio Code (vscode) editor'
 _electron=electron"$(curl -s "https://raw.githubusercontent.com/microsoft/vscode/main/.yarnrc" | sed -n -E 's/^target "([0-9]*)\..*"/\1/p')"
 pkgver="$(curl -s "https://raw.githubusercontent.com/microsoft/vscode/main/package.json" | python -c "import sys, json; print(json.load(sys.stdin)['version'])")"
 pkgrel=2
-commit=c23f0305dbf82b2319b198f4dbf3c5d5bc522f15
 arch=('x86_64')
 url='https://github.com/microsoft/vscode'
 license=('MIT')
@@ -24,7 +23,7 @@ optdepends=('bash-completion: Bash completions'
             'x11-ssh-askpass: SSH authentication')
 makedepends=('git' 'gulp' 'npm' 'python' 'yarn' 'nodejs-lts-gallium')
 provides=('vscode')
-source=("$pkgname::git+$url.git#commit=$commit"
+source=("$pkgname::git+$url.git#branch=main"
         'code.js'
         'code.sh'
         'product_json.diff')
