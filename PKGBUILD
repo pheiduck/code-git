@@ -21,6 +21,7 @@ depends=($_electron 'libsecret' 'libx11' 'libxkbfile' 'ripgrep')
 optdepends=('bash-completion: Bash completions'
             'zsh-completions: ZSH completitons'
             'x11-ssh-askpass: SSH authentication')
+options=(debug)
 makedepends=('git' 'gulp' 'npm' 'python' 'yarn' 'nodejs-lts-gallium')
 provides=('vscode')
 source=("$pkgname::git+$url.git#branch=main"
