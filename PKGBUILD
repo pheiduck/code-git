@@ -11,7 +11,8 @@ pkgdesc='The Open Source build of Visual Studio Code (vscode) editor'
 #   - erbium: 12
 #   - fermium: 14
 #   - gallium: 16
-_electron=electron"$(curl -s "https://raw.githubusercontent.com/microsoft/vscode/main/.yarnrc" | sed -n -E 's/^target "([0-9]*)\..*"/\1/p')"
+_electron=electron
+#_electron=electron"$(curl -s "https://raw.githubusercontent.com/microsoft/vscode/main/.yarnrc" | sed -n -E 's/^target "([0-9]*)\..*"/\1/p')"
 pkgver="$(curl -s "https://raw.githubusercontent.com/microsoft/vscode/main/package.json" | python -c "import sys, json; print(json.load(sys.stdin)['version'])")"
 pkgrel=2
 arch=('x86_64')
