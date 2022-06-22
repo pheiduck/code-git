@@ -13,7 +13,7 @@ pkgdesc='The Open Source build of Visual Studio Code (vscode) editor'
 #   - gallium: 16
 _electron=electron
 #_electron=electron"$(curl -s "https://raw.githubusercontent.com/microsoft/vscode/main/.yarnrc" | sed -n -E 's/^target "([0-9]*)\..*"/\1/p')"
-pkgver="$(curl -s "https://raw.githubusercontent.com/microsoft/vscode/main/package.json" | python -c "import sys, json; print(json.load(sys.stdin)['version'])")"
+pkgver="$(curl -s "https://raw.githubusercontent.com/microsoft/vscode/main/package.json" | sed -n '3p' | cut -c15-20)"
 pkgrel=2
 arch=('x86_64')
 url='https://github.com/microsoft/vscode'
